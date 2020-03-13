@@ -84,9 +84,11 @@ function onChange(evt){
 var show = 0;
 function toggle() {
   if (document.getElementById("cheat").style.display == "none") {
-    document.getElementById("cheat").style.display = "inline";
+    document.getElementById("cheat").style.display = "block";
+    console.log("showing")
   } else {
     document.getElementById("cheat").style.display = "none";
+    console.log("hiding");
   }
 }
     </script>
