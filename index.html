@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="apple-mobile-web-app-title" content="CodePen">
-<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
-<title>Lex Online Worksheet</title>
+<title>Lex Vocab Test</title>
 <style>
 body{
   background-image: url("https://cdn.wallpaperhi.com/1920x1080/20180426/5ae1cd66635d3.jpg");
@@ -13,6 +12,7 @@ body{
 h1 {
   color: white;
 }
+
 ol{
   border: 2px solid black;
   list-style-type: upper-roman;
@@ -28,43 +28,56 @@ ol{
 .incorrect{
   background:red;
 }
+input {
+  padding-left: 10px;
+}
 
-#cheat{
+.cheat {
   display: none;
 }
 </style>
 </head>
 <body translate="no">
-<h1>Vocab</h1>
+<h1>Vocab Test</h1>
 <ol>
-  <li>Temerity <input data-correct="boldness; rashness"></li>
-  <li>Protean <input data-correct="versatile; changeable in shape or form"></li>
-  <li>Galvanize <input data-correct="to stimulate by shock; stir up; revitalize"></li>
-  <li>Maudlin <input data-correct="effusively sentimental"></li>
-  <li>Juggernaut <input data-correct="an irresistible crushing force; any large, overpowering, destructive force or object"></li>
-  <li>Replete <input data-correct="abudantly supplied or provided; filled"></li>
-  <li>Adroit <input data-correct="skillful; expert"></li>
-  <li>Seminal <input data-correct="highly original; strongly influencing the development of future events"></li>
-  <li>Inscrutable <input data-correct="impenetrable; incapable of being investigated or understood; unfathomable"></li>
+<li>Temerity <input data-correct="boldness; rashness"></li>
+<li>Protean <input data-correct="versatile; changeable in shape or form"></li>
+<li>Galvanize <input data-correct="to stimulate by shock; stir up; revitalize"></li>
+<li>Maudlin <input data-correct="effusively sentimental"></li>
+<li>Juggernaut <input data-correct="an irresistible crushing force; any large, overpowering, destructive force or object"></li>
+<li>Replete <input data-correct="abudantly supplied or provided; filled"></li>
+<li>Adroit <input data-correct="skillful; expert"></li>
+<li>Seminal <input data-correct="highly original; strongly influencing the development of future events"></li>
+<li>Inscrutable <input data-correct="impenetrable; incapable of being investigated or understood; unfathomable"></li>
 </ol>
-<ol id="cheat">
-  <li>Temerity: boldness; rashness</li>
-  <li>Protean: versatile; changeable in shape or form</li>
-  <li>Galvanize: to stimulate by shock; stir up; revitalize</li>
-  <li>Maudlin: effusively sentimental</li>
-  <li>Juggernaut: an irresistible crushing force; any large, overpowering, destructive force or object</li>
-  <li>Replete: abudantly supplied or provided; filled</li>
-  <li>Adroit: skillful; expert</li>
-  <li>Seminal: highly original; strongly influencing the development of future events</li>
-  <li>Inscrutable: impenetrable; incapable of being investigated or understood; unfathomable</li>
+<ol id="cheat" class="cheat">
+<li>Temerity: boldness; rashness</li>
+<li>Protean: versatile; changeable in shape or form</li>
+<li>Galvanize: to stimulate by shock; stir up; revitalize</li>
+<li>Maudlin: effusively sentimental</li>
+<li>Juggernaut: an irresistible crushing force; any large, overpowering, destructive force or object</li>
+<li>Replete: abudantly supplied or provided; filled</li>
+<li>Adroit: skillful; expert</li>
+<li>Seminal: highly original; strongly influencing the development of future events</li>
+<li>Inscrutable: impenetrable; incapable of being investigated or understood; unfathomable</li>
 </ol>
-<button type="button" onclick"console.log("test)">Cheat Sheet</button>
+<button type="button" onclick="toggle()">Cheat Sheet</button>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script id="rendered-js">
 console.clear();
 console.log("hello universe!")
 
 $("input").change(onChange);
+
+function toggle() {
+  if (document.getElementById("cheat").style.display == "none") {
+    document.getElementById("cheat").style.display = "block";
+    console.log("showing")
+  } else {
+    document.getElementById("cheat").style.display = "none";
+    console.log("hiding");
+  }
+}
 
 function onChange(evt){
   
@@ -80,16 +93,6 @@ function onChange(evt){
 
   }
   
-}
-var show = 0;
-function toggle() {
-  if (document.getElementById("cheat").style.display == "none") {
-    document.getElementById("cheat").style.display = "block";
-    console.log("showing")
-  } else {
-    document.getElementById("cheat").style.display = "none";
-    console.log("hiding");
-  }
 }
     </script>
 </body>
